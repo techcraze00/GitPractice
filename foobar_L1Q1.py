@@ -27,3 +27,21 @@ def solution(h, q):
 
 # Return the list 
 
+def find_parent(node_label, nodes):
+    if node_label == nodes:
+        return -1  # The root has no parent
+
+    left_child = node_label * 2
+    right_child = node_label * 2 + 1
+
+    if left_child >= nodes or right_child >= nodes:
+        return -1  # Node has no children, so no parent
+
+    if left_child < nodes and node_label != nodes:
+        return left_child  # Left child is the parent of the current node
+
+    if right_child < nodes and node_label != nodes:
+        return right_child  # Right child is the parent of the current node
+
+
+print(solution(3, [1, 4, 7]))  #returns the soltuion
