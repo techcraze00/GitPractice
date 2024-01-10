@@ -11,3 +11,19 @@ with the root, two internal nodes and four leaf nodes (like the example above), 
 contain at least one but no more than 10000 distinct integers, all of which will be between 1
 and 2^h-1, inclusive
 '''
+
+def solution(h, q):
+    nodes = 2 ** h - 1  # Total number of nodes in the perfect binary tree
+    results = []
+
+    for node_label in q:
+        if node_label < 1 or node_label >= nodes:
+            results.append(-1)  # Invalid node label
+        else:
+            parent = find_parent(node_label, nodes)
+            results.append(parent)
+
+    return results
+
+# Return the list 
+
