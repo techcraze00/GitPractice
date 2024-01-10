@@ -93,4 +93,7 @@ def solution(h, q):
 
     return result
 
+print(solution(3, [1, 4, 7]))  
+print(solution(5, [19, 14, 28]))  
+
 
